@@ -1,0 +1,351 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+header {
+    min-height: 100vh;
+    background: linear-gradient(270deg, #020617, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.btn {
+    background: #38bdf8;
+    color: #020617;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0); /* pas de glow par défaut */
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8); /* glow visible seulement au hover */
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    list-style: none;
+}
+
+#skills li {
+    background: #020617;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project {
+    background: #020617;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    background: #020617;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, section {
+    animation: fadeUp 1s ease forwards;
+}
+
+.project {
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 50px 15px;
+    }
+
+    #skills ul {
+        grid-template-columns: 1fr; /* compétences en colonne */
+    }
+
+    .project {
+        margin-top: 15px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    header p {
+        font-size: 0.9rem;
+    }
+}
+
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
+    min-height: 100vh;
+    background: linear-gradient(270deg, #020617, #0f172a, #020617);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    animation: fadeUp 1s ease forwards;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.btn {
+    margin-top: 20px;
+    background: #38bdf8;
+    color: #020617;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+}
+
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 80px 20px;
+    animation: fadeUp 1s ease forwards;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+#skills ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    list-style: none;
+}
+
+#skills li {
+    background: #020617;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.project {
+    background: #020617;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+footer {
+    background: #020617;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* REVEAL ON SCROLL */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MEDIA QUERIES POUR MOBILE & TABLET */
+@media (max-width: 1024px) {
+    header h1 { font-size: 2.5rem; }
+    header p { font-size: 1.1rem; }
+    section { padding: 60px 20px; }
+}
+
+@media (max-width: 768px) {
+    header h1 { font-size: 2.2rem; }
+    header p { font-size: 1rem; }
+    section { padding: 50px 15px; }
+    #skills ul { grid-template-columns: 1fr; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+    header h1 { font-size: 1.8rem; }
+    header p { font-size: 0.9rem; }
+    .btn { padding: 8px 15px; font-size: 0.8rem; }
+    section { padding: 40px 10px; }
+}
+
+#skills-overview {
+    margin-top: 20px;
+}
+
+.skill-bar {
+    background: #333;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    height: 10px;
+    width: 100%;
+}
+
+.skill-bar div {
+    height: 10px;
+    background: #38bdf8;
+    border-radius: 20px;
+}
